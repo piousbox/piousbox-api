@@ -1,5 +1,4 @@
-import { fetch } from 'whatwg-fetch'
-import Q from 'q'
+
 import axios from 'axios'
 
 class Tag {

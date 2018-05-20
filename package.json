@@ -1,6 +1,6 @@
 {
   "name": "piousbox-api",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Returns the data available publicly from a pi backend",
   "main": "dist/index.js",
   "author": "Victor Pudeyev",
@@ -22,8 +22,7 @@
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build_trash": "./node_modules/.bin/webpack --config webpack/config.js",
-    "build": "./node_modules/.bin/babel src/index.jsx -o dist/index.js --presets react,es2015"
+    "build": "./node_modules/.bin/babel src/index.jsx -o dist/index.js --presets react,es2015",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
