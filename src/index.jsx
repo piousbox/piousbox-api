@@ -1,57 +1,33 @@
-import React from 'react'
+import { fetch } from 'whatwg-fetch'
+import Q from 'q'
+import axios from 'axios'
 
-class Newsitems extends React.Component {
-  render () {
-    console.log('+++ Newsitems render')
-    return (
-      <div>newsitems</div>
-    )
+class Tag {
+  constructor(config) {
+    this.config = config
+    return this
+  }
+  get(tagname, delta={}) {
+    let query = Object.keys(delta).map(k => `${k}=${delta[k]}`).join('&')
+    let url = `${this.config.apiUrl}/api/tags/view/${tagname}.json?${query}`
+    let a = axios.get( url ).then(r => {
+      return r.data
+    }).then(_data => {
+      return _data
+    })
+    return a
   }
 }
 
-class Newsitem extends React.Component {
-  render () {
-    console.log('+++ Newsitem render')
-    return (
-      <div>newsitem</div>
-    )
+class Site {
+  constructor(config) {
+    this.config = config
+    return this
+  }
+  features() {
   }
 }
 
-class NewsitemGallery extends React.Component {
-  render () {
-    console.log('+++ NewsitemGallery render')
-    return (
-      <div>newsitemGallery</div>
-    )
-  }
-}
+export { Tag }
+export { Site }
 
-class NewsitemVideo extends React.Component {
-  render () {
-    console.log('+++ NewsitemVideo render')
-    return (
-      <div>newsitem video</div>
-    )
-  }
-}
-
-class NewsitemReport extends React.Component {
-  render () {
-    console.log('+++ NewsitemReport render')
-    return (
-      <div>newsitem report</div>
-    )
-  }
-}
-
-export default {
-  Newsitems,
-  Newsitem,
-  NewsitemGallery,
-  NewsitemReport,
-  NewsitemVideo
-}
-
-
-        
