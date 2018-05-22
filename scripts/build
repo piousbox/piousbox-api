@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -ex
+
+npm run build
+./scripts/version_bump
+git add .; git commit -m 'autocommit'; git push
+npm publish
+
+echo 'Built npm module piosubox-render'
+

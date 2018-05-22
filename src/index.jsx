@@ -25,8 +25,12 @@ class Site {
   }
   features() {
   }
+  all() {
+    let url = `${this.config.apiUrl}/api/sites/view/${this.config.domain}.json`
+    let a = axios.get( url ).then(r => r.data.site)
+    return a
+  }
 }
 
-export { Tag }
-export { Site }
+export { Tag, Site }
 

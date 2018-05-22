@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+`cp -v package.json package.json-bk`
+
+require 'json'
+inn = JSON.parse File.read 'package.json'
+inn['version'] = inn['version'].split('.').each_with_index.map { |i, idx| idx == 2 ? i.to_i + 1 : i }.join('.')
+File.write 'package.json', JSON.pretty_generate(inn)

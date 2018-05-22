@@ -55,6 +55,15 @@ var Site = function () {
   _createClass(Site, [{
     key: 'features',
     value: function features() {}
+  }, {
+    key: 'all',
+    value: function all() {
+      var url = this.config.apiUrl + '/api/sites/view/' + this.config.domain + '.json';
+      var a = _axios2.default.get(url).then(function (r) {
+        return r.data.site;
+      });
+      return a;
+    }
   }]);
 
   return Site;
