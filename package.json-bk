@@ -1,6 +1,6 @@
 {
   "name": "piousbox-api",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Returns the data available publicly from a pi backend",
   "main": "dist/index.js",
   "author": "Victor Pudeyev",
